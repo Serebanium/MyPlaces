@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Места-->
         <scene sceneID="4qr-QZ-YwP">
             <objects>
                 <tableViewController id="Fup-C4-zBQ" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="Fup-C4-zBQ" id="xRV-8Q-eQE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="QtE-VL-9Y6"/>
+                    <navigationItem key="navigationItem" title="Места" id="QtE-VL-9Y6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctD-PV-bIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +45,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g7c-pw-X7R">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Fup-C4-zBQ" kind="relationship" relationship="rootViewController" id="XRG-Xf-hRJ"/>
