@@ -242,13 +242,21 @@
                     <navigationItem key="navigationItem" title="Новое место" id="D5w-VI-217">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ohw-ON-Qe8">
                             <connections>
-                                <segue destination="Piw-FR-q9A" kind="unwind" unwindAction="unwindToMain:" id="MzS-xf-Vh8"/>
+                                <action selector="cancelAction:" destination="Xex-ux-bRj" id="Fle-7G-BWH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QrF-sV-qrs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QrF-sV-qrs">
+                            <connections>
+                                <segue destination="Piw-FR-q9A" kind="unwind" unwindAction="unwindToMain:" id="tXC-Hq-ItP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="uvH-Kq-Ea1" id="ZRk-H5-bBN"/>
+                        <outlet property="placeImage" destination="uvH-Kq-Ea1" id="ZRk-H5-bBN"/>
+                        <outlet property="placeLocationTextField" destination="giP-fw-eyd" id="UOG-gS-QEK"/>
+                        <outlet property="placeNameTextField" destination="5MM-SD-hoT" id="2aF-yH-xDt"/>
+                        <outlet property="placeTypeTextField" destination="lS4-Nj-3nm" id="aRf-Ny-sog"/>
+                        <outlet property="saveButton" destination="QrF-sV-qrs" id="YJd-0c-Cdk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2R1-Yf-RJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>

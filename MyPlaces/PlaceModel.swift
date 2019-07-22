@@ -6,13 +6,15 @@
 //  Copyright © 2019 topMob. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
 
 struct Place {
     var name: String
-    var location : String
-    var type: String
-    var image: String
+    var location : String?
+    var type: String?
+    var image: UIImage?
+    var restaurantImage: String?
     
     static let restaurantNames = [
         "Восход",
@@ -27,7 +29,7 @@ struct Place {
     static func getPlaces() -> [Place] {
         var places: [Place] = []
         for place in restaurantNames {
-            places.append(Place(name: place, location: "Мантурово", type: "Ресторан", image: place))
+            places.append(Place(name: place, location: "Мантурово", type: "Ресторан", image: nil, restaurantImage: place))
         }
         return places
     }
