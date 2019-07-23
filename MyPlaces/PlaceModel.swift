@@ -7,16 +7,16 @@
 //
 
 
-import UIKit
+import RealmSwift
 
-struct Place {
-    var name: String
-    var location : String?
-    var type: String?
-    var image: UIImage?
-    var restaurantImage: String?
+class Place: Object {
     
-    static let restaurantNames = [
+    @objc dynamic var name = ""
+    @objc dynamic var location : String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
+    
+    let restaurantNames = [
         "Восход",
         "Робин",
         "Крым",
@@ -26,11 +26,21 @@ struct Place {
         "Погребок"
         ]
     
-    static func getPlaces() -> [Place] {
-        var places: [Place] = []
+    func savePlaces() {
+        
         for place in restaurantNames {
-            places.append(Place(name: place, location: "Мантурово", type: "Ресторан", image: nil, restaurantImage: place))
-        }
-        return places
+            
+            let image = UIImage(named: place)
+            guard let imageData = image?.pngData() else { return }
+            let newPlace = Place()
+            
+            newPlace.name = place
+            newPlace.location = "Мантурово"
+            newPlace.type = "Ресторан"
+            newPlace.imageData = imageData
+            
+            StorageManager.saveObject(newPlace)
+       }
     }
+    
 }
